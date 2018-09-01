@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %mate{:content => "text/html; charset=UFT-8#","http-equiv"=>"Content-Type"}/
+    %title Chatspace
+    =csrf_mate_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+     %body
+    = render 'layouts/notifications'
+    = yield

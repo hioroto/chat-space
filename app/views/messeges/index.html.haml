@@ -1,0 +1,69 @@
+
+
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ReviewSpace
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "ZaJOxAzU9XQbxJHsP2mTjyQwA+YWXd+66anlU+9oCyH22eX+CdDKK5nyWOjbNAJW+y+ifJHIdIuf0yj43gRz8w==", :name => "csrf-token"}/
+    %link{:href => "/assets/application-c617cd3cc56ea5db583836527c3a19ec935e32bc3e23710c957791a1d7ac6c38.css", :media => "all", :rel => "stylesheet"}/
+    %script{:src => "/javascripts/application.js"}
+  %body
+    .notification
+      .notice メッセージ送信成功
+
+
+
+.chat-side
+  .chat-side__user
+    .chat-side__user-content
+      .chat-side__user-name
+        ユーザーネーム
+      %a.chat-side__user--new-group{:href => "/groups/new"}
+        %i.fa.fa-pencil-square-o
+      %a.chat-side__user--edit-user{:href => "/users/edit"}
+        %i.fa.fa-cog
+  .chat-side__groups
+    .chat-side__groups-list
+      %a{:href => "/groups/1175/messages"}
+    .chat-side__groups-name
+      グループ名
+    .chat-side__groups-message
+      まだメッセージは何もありません
+
+.chat-main
+  .chat-main__header
+    .chat-main__header--group.clearfix
+      .chat-main__header--group-name
+        グループ
+      %a.chat-main__header--group-edit-btn{:href => "/groups/1186/edit"}
+        edit
+    .chat-main__header-members
+      MEMBER:
+      %i
+        hiroto
+  .chat-main__body
+    .chat-main__body--messages-list
+      .chat-main__message.clearfix{"data-id" => "2009"}
+        .chat-main__message-name
+          hiroto
+        .chat-main__message-time
+          2018/08/06 13:19:33
+        .chat-main__message-body
+          test
+          %img.chat-main__message-body-image{:src => ""}/
+
+  .chat-main__footer
+    %form#new_message.chat-main__footer-form{"accept-charset" => "UTF-8", :action => "/groups/1226/messages", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "TDtqXMfjWJ3lUIGrfmJx8INruuwji9kEvQ0b5M46kaU7knKmANNmLSsx+ZUQIo779x7O1ASRugrti5KemUfjJg=="}/
+      .chat-main__footer-body
+        %input#message_body.message{:name => "message[body]", :placeholder => "type a message", :type => "text"}/
+        %label.chat-file{:for => "message_image"}
+          %input#message_image.image{:name => "message[image]", :type => "file"}/
+          %i.fa.fa-image
+      %input.submit{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+
+
